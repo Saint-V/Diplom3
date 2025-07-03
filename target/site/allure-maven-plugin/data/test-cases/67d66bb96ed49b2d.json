@@ -1,0 +1,258 @@
+{
+  "uid" : "67d66bb96ed49b2d",
+  "name" : "Успешная регистрация",
+  "fullName" : "tests.RegistrationTest.successRegisterTest",
+  "historyId" : "3703287b5737dffa0158611401ad251c",
+  "time" : {
+    "start" : 1751536532150,
+    "stop" : 1751536547554,
+    "duration" : 15404
+  },
+  "description" : "Проверка регистрации пользователя",
+  "descriptionHtml" : "<p>Проверка регистрации пользователя</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "description" : "Проверка регистрации пользователя",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Нажатие на кнопку Войти в аккаунт",
+      "time" : {
+        "start" : 1751536541255,
+        "stop" : 1751536541488,
+        "duration" : 233
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false,
+      "stepsCount" : 0
+    }, {
+      "name" : "Нажатие на гиперссылку Зарегистрироваться",
+      "time" : {
+        "start" : 1751536541488,
+        "stop" : 1751536541708,
+        "duration" : 220
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false,
+      "stepsCount" : 0
+    }, {
+      "name" : "Заполнить форму регистрации",
+      "time" : {
+        "start" : 1751536541747,
+        "stop" : 1751536543388,
+        "duration" : 1641
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Заполнить поле Имя",
+        "time" : {
+          "start" : 1751536541747,
+          "stop" : 1751536541972,
+          "duration" : 225
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "name",
+          "value" : "Samatha"
+        } ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true,
+        "stepsCount" : 0
+      }, {
+        "name" : "Заполнить поле Email",
+        "time" : {
+          "start" : 1751536541973,
+          "stop" : 1751536542495,
+          "duration" : 522
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "email",
+          "value" : "raymundo.hyatt@gmail.com"
+        } ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true,
+        "stepsCount" : 0
+      }, {
+        "name" : "Заполнить поле Пароль",
+        "time" : {
+          "start" : 1751536542496,
+          "stop" : 1751536543117,
+          "duration" : 621
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "password",
+          "value" : "6bsej6w1q1v"
+        } ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true,
+        "stepsCount" : 0
+      }, {
+        "name" : "Клик по кнопке Зарегистрироваться",
+        "time" : {
+          "start" : 1751536543118,
+          "stop" : 1751536543388,
+          "duration" : 270
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false,
+        "stepsCount" : 0
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "name",
+        "value" : "Samatha"
+      }, {
+        "name" : "email",
+        "value" : "raymundo.hyatt@gmail.com"
+      }, {
+        "name" : "password",
+        "value" : "6bsej6w1q1v"
+      } ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true,
+      "stepsCount" : 4
+    }, {
+      "name" : "Ожидание загрузки страницы авторизации",
+      "time" : {
+        "start" : 1751536543388,
+        "stop" : 1751536543902,
+        "duration" : 514
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false,
+      "stepsCount" : 0
+    }, {
+      "name" : "Авторизация пользователя",
+      "time" : {
+        "start" : 1751536543902,
+        "stop" : 1751536544828,
+        "duration" : 926
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "user",
+        "value" : "User(email=raymundo.hyatt@gmail.com, password=6bsej6w1q1v, name=Samatha)"
+      } ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true,
+      "stepsCount" : 0
+    }, {
+      "name" : "Проверка видимости кнопки Войти",
+      "time" : {
+        "start" : 1751536544863,
+        "stop" : 1751536544928,
+        "duration" : 65
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false,
+      "stepsCount" : 0
+    }, {
+      "name" : "Удаление пользователя",
+      "time" : {
+        "start" : 1751536544928,
+        "stop" : 1751536545720,
+        "duration" : 792
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "token",
+        "value" : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NjY0NGMyOWVkMjgwMDAxYjY0M2Y0NSIsImlhdCI6MTc1MTUzMjczOSwiZXhwIjoxNzUxNTMzOTM5fQ.0eTb82oU6iZytBkodHB_TAaKLc_5fbTz4m7azPzUdcc"
+      } ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true,
+      "stepsCount" : 0
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true,
+    "stepsCount" : 11
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "tests"
+  }, {
+    "name" : "testClass",
+    "value" : "tests.RegistrationTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "successRegisterTest"
+  }, {
+    "name" : "suite",
+    "value" : "tests.RegistrationTest"
+  }, {
+    "name" : "host",
+    "value" : "Saint-V"
+  }, {
+    "name" : "thread",
+    "value" : "23880@Saint-V.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit4"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "67d66bb96ed49b2d.json",
+  "parameterValues" : [ ]
+}

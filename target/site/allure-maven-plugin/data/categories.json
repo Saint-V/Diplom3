@@ -1,0 +1,52 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "java.lang.AssertionError",
+      "children" : [ {
+        "name" : "Переход к разделу Начинки из раздела Соусы",
+        "uid" : "28c058a9e2fb5027",
+        "parentUid" : "8c5a12edd58a5b39ca043c7c2ab86098",
+        "status" : "failed",
+        "time" : {
+          "start" : 1751536579313,
+          "stop" : 1751536589009,
+          "duration" : 9696
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Переход к разделу Булки из раздела Начинки",
+        "uid" : "8acafa26d4c98b96",
+        "parentUid" : "8c5a12edd58a5b39ca043c7c2ab86098",
+        "status" : "failed",
+        "time" : {
+          "start" : 1751536601071,
+          "stop" : 1751536611649,
+          "duration" : 10578
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Переход к разделу Начинки из раздела Булки",
+        "uid" : "2f03c152c87b3fe0",
+        "parentUid" : "8c5a12edd58a5b39ca043c7c2ab86098",
+        "status" : "failed",
+        "time" : {
+          "start" : 1751536611656,
+          "stop" : 1751536621015,
+          "duration" : 9359
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "8c5a12edd58a5b39ca043c7c2ab86098"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ]
+}

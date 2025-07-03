@@ -1,0 +1,171 @@
+[ {
+  "uid" : "31bee8a46f7d260b",
+  "name" : "Переход к разделу Булки из раздела Соусы",
+  "time" : {
+    "start" : 1751536589017,
+    "stop" : 1751536601061,
+    "duration" : 12044
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "2f03c152c87b3fe0",
+  "name" : "Переход к разделу Начинки из раздела Булки",
+  "time" : {
+    "start" : 1751536611656,
+    "stop" : 1751536621015,
+    "duration" : 9359
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "28c058a9e2fb5027",
+  "name" : "Переход к разделу Начинки из раздела Соусы",
+  "time" : {
+    "start" : 1751536579313,
+    "stop" : 1751536589009,
+    "duration" : 9696
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "67d66bb96ed49b2d",
+  "name" : "Успешная регистрация",
+  "time" : {
+    "start" : 1751536532150,
+    "stop" : 1751536547554,
+    "duration" : 15404
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "8ff16d0c4423a142",
+  "name" : "Вход по кнопке \"Войти в аккаунт\" на главной странице",
+  "time" : {
+    "start" : 1751536490105,
+    "stop" : 1751536503536,
+    "duration" : 13431
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "15d2f17c5b4225f4",
+  "name" : "Переход к разделу Соусы из раздела Начинки",
+  "time" : {
+    "start" : 1751536621030,
+    "stop" : 1751536631897,
+    "duration" : 10867
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "6b1ad5eeafad5b96",
+  "name" : "Нажатие на кнопку Личный кабинет, если пользователь авторизован",
+  "time" : {
+    "start" : 1751536436596,
+    "stop" : 1751536451250,
+    "duration" : 14654
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "d0d2c5c816216cdf",
+  "name" : "Нажатие на кнопку Личный кабинет, если пользователь не авторизован",
+  "time" : {
+    "start" : 1751536451259,
+    "stop" : 1751536463550,
+    "duration" : 12291
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e06557bd936b15fe",
+  "name" : "Нажатие в личном кабинете на логотип бургерной",
+  "time" : {
+    "start" : 1751536419895,
+    "stop" : 1751536436565,
+    "duration" : 16670
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "8acafa26d4c98b96",
+  "name" : "Переход к разделу Булки из раздела Начинки",
+  "time" : {
+    "start" : 1751536601071,
+    "stop" : 1751536611649,
+    "duration" : 10578
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "caf0ff66aedbd37d",
+  "name" : "Вход через кнопку \"Личный кабинет\"",
+  "time" : {
+    "start" : 1751536477041,
+    "stop" : 1751536490099,
+    "duration" : 13058
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "f354e6ca964c9486",
+  "name" : "Проверка ошибки для некорректного пароля",
+  "time" : {
+    "start" : 1751536547563,
+    "stop" : 1751536559364,
+    "duration" : 11801
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "6cf062a8446d870c",
+  "name" : "Нажатие в личном кабинете на конструктор",
+  "time" : {
+    "start" : 1751536369872,
+    "stop" : 1751536419461,
+    "duration" : 49589
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "d07794697df432f4",
+  "name" : "Переход к разделу Соусы из раздела Булки",
+  "time" : {
+    "start" : 1751536559377,
+    "stop" : 1751536579308,
+    "duration" : 19931
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "703113fd530e9eeb",
+  "name" : "Вход через кнопку в форме регистрации",
+  "time" : {
+    "start" : 1751536503541,
+    "stop" : 1751536517374,
+    "duration" : 13833
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "75d5276b180ce27f",
+  "name" : "LogOut нажатием кнопки Выход в Личном кабинете",
+  "time" : {
+    "start" : 1751536517381,
+    "stop" : 1751536532119,
+    "duration" : 14738
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "b6aa4ab29b7b59a5",
+  "name" : "Вход через кнопку в форме восстановления пароля",
+  "time" : {
+    "start" : 1751536463565,
+    "stop" : 1751536476990,
+    "duration" : 13425
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

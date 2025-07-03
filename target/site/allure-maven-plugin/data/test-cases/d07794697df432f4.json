@@ -1,0 +1,99 @@
+{
+  "uid" : "d07794697df432f4",
+  "name" : "Переход к разделу Соусы из раздела Булки",
+  "fullName" : "tests.SwitchingBetweenSectionsConstructorTest.switchingSectionsBunsToSaucesTest",
+  "historyId" : "b8249cdd362cb56c36db64b340add3ae",
+  "time" : {
+    "start" : 1751536559377,
+    "stop" : 1751536579308,
+    "duration" : 19931
+  },
+  "description" : "Тест перехода между разделами в конструкторе бургера",
+  "descriptionHtml" : "<p>Тест перехода между разделами в конструкторе бургера</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "description" : "Тест перехода между разделами в конструкторе бургера",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Нажатие на раздел конструктора \"Соусы\"",
+      "time" : {
+        "start" : 1751536575809,
+        "stop" : 1751536576753,
+        "duration" : 944
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false,
+      "stepsCount" : 0
+    }, {
+      "name" : "Получение атрибута class когда выбран раздел \"Соусы\"",
+      "time" : {
+        "start" : 1751536576754,
+        "stop" : 1751536577426,
+        "duration" : 672
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false,
+      "stepsCount" : 0
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true,
+    "stepsCount" : 2
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "tests"
+  }, {
+    "name" : "testClass",
+    "value" : "tests.SwitchingBetweenSectionsConstructorTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "switchingSectionsBunsToSaucesTest"
+  }, {
+    "name" : "suite",
+    "value" : "tests.SwitchingBetweenSectionsConstructorTest"
+  }, {
+    "name" : "host",
+    "value" : "Saint-V"
+  }, {
+    "name" : "thread",
+    "value" : "23880@Saint-V.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit4"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "d07794697df432f4.json",
+  "parameterValues" : [ ]
+}

@@ -1,0 +1,207 @@
+{
+  "uid" : "f354e6ca964c9486",
+  "name" : "Проверка ошибки для некорректного пароля",
+  "fullName" : "tests.RegistrationTest.registerWithIncorrectPasswordTest",
+  "historyId" : "c026fe1d2190c28bb298c09d133612d",
+  "time" : {
+    "start" : 1751536547563,
+    "stop" : 1751536559364,
+    "duration" : 11801
+  },
+  "description" : "Проверка регистрации пользователя",
+  "descriptionHtml" : "<p>Проверка регистрации пользователя</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "description" : "Проверка регистрации пользователя",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Нажатие на кнопку Войти в аккаунт",
+      "time" : {
+        "start" : 1751536555823,
+        "stop" : 1751536556068,
+        "duration" : 245
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false,
+      "stepsCount" : 0
+    }, {
+      "name" : "Нажатие на гиперссылку Зарегистрироваться",
+      "time" : {
+        "start" : 1751536556068,
+        "stop" : 1751536556283,
+        "duration" : 215
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false,
+      "stepsCount" : 0
+    }, {
+      "name" : "Заполнить форму регистрации",
+      "time" : {
+        "start" : 1751536556284,
+        "stop" : 1751536557253,
+        "duration" : 969
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Заполнить поле Имя",
+        "time" : {
+          "start" : 1751536556284,
+          "stop" : 1751536556616,
+          "duration" : 332
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "name",
+          "value" : "Ivan"
+        } ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true,
+        "stepsCount" : 0
+      }, {
+        "name" : "Заполнить поле Email",
+        "time" : {
+          "start" : 1751536556616,
+          "stop" : 1751536556896,
+          "duration" : 280
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "email",
+          "value" : "user-test@ya.ru"
+        } ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true,
+        "stepsCount" : 0
+      }, {
+        "name" : "Заполнить поле Пароль",
+        "time" : {
+          "start" : 1751536556897,
+          "stop" : 1751536557042,
+          "duration" : 145
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "password",
+          "value" : "pass"
+        } ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true,
+        "stepsCount" : 0
+      }, {
+        "name" : "Клик по кнопке Зарегистрироваться",
+        "time" : {
+          "start" : 1751536557042,
+          "stop" : 1751536557253,
+          "duration" : 211
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false,
+        "stepsCount" : 0
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "name",
+        "value" : "Ivan"
+      }, {
+        "name" : "email",
+        "value" : "user-test@ya.ru"
+      }, {
+        "name" : "password",
+        "value" : "pass"
+      } ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true,
+      "stepsCount" : 4
+    }, {
+      "name" : "Получение текста сообщения об ошибке в поле Пароль",
+      "time" : {
+        "start" : 1751536557254,
+        "stop" : 1751536557341,
+        "duration" : 87
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false,
+      "stepsCount" : 0
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true,
+    "stepsCount" : 8
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "tests"
+  }, {
+    "name" : "testClass",
+    "value" : "tests.RegistrationTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "registerWithIncorrectPasswordTest"
+  }, {
+    "name" : "suite",
+    "value" : "tests.RegistrationTest"
+  }, {
+    "name" : "host",
+    "value" : "Saint-V"
+  }, {
+    "name" : "thread",
+    "value" : "23880@Saint-V.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit4"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "f354e6ca964c9486.json",
+  "parameterValues" : [ ]
+}
