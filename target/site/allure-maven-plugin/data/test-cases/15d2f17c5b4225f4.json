@@ -1,0 +1,114 @@
+{
+  "uid" : "15d2f17c5b4225f4",
+  "name" : "Переход к разделу Соусы из раздела Начинки",
+  "fullName" : "tests.SwitchingBetweenSectionsConstructorTest.switchingSectionsFillingsToSaucesTest",
+  "historyId" : "f4ca0e82cfd41a6349fcdc93514daa9c",
+  "time" : {
+    "start" : 1751536621030,
+    "stop" : 1751536631897,
+    "duration" : 10867
+  },
+  "description" : "Тест перехода между разделами в конструкторе бургера",
+  "descriptionHtml" : "<p>Тест перехода между разделами в конструкторе бургера</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "description" : "Тест перехода между разделами в конструкторе бургера",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Нажатие на раздел конструктора \"Начинки\"",
+      "time" : {
+        "start" : 1751536628604,
+        "stop" : 1751536628817,
+        "duration" : 213
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false,
+      "stepsCount" : 0
+    }, {
+      "name" : "Нажатие на раздел конструктора \"Соусы\"",
+      "time" : {
+        "start" : 1751536628817,
+        "stop" : 1751536629432,
+        "duration" : 615
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false,
+      "stepsCount" : 0
+    }, {
+      "name" : "Получение атрибута class когда выбран раздел \"Соусы\"",
+      "time" : {
+        "start" : 1751536629432,
+        "stop" : 1751536629860,
+        "duration" : 428
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false,
+      "stepsCount" : 0
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true,
+    "stepsCount" : 3
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "tests"
+  }, {
+    "name" : "testClass",
+    "value" : "tests.SwitchingBetweenSectionsConstructorTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "switchingSectionsFillingsToSaucesTest"
+  }, {
+    "name" : "suite",
+    "value" : "tests.SwitchingBetweenSectionsConstructorTest"
+  }, {
+    "name" : "host",
+    "value" : "Saint-V"
+  }, {
+    "name" : "thread",
+    "value" : "23880@Saint-V.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit4"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "15d2f17c5b4225f4.json",
+  "parameterValues" : [ ]
+}

@@ -1,0 +1,222 @@
+{
+  "uid" : "e06557bd936b15fe",
+  "name" : "Нажатие в личном кабинете на логотип бургерной",
+  "fullName" : "tests.ConstructorTest.clickLogoBurgerTest",
+  "historyId" : "a55260856a4ad09dd5d8c19560175372",
+  "time" : {
+    "start" : 1751536419895,
+    "stop" : 1751536436565,
+    "duration" : 16670
+  },
+  "description" : "Проверка перехода на главную страницу",
+  "descriptionHtml" : "<p>Проверка перехода на главную страницу</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "description" : "Проверка перехода на главную страницу",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Регистрация пользователя",
+      "time" : {
+        "start" : 1751536430446,
+        "stop" : 1751536431176,
+        "duration" : 730
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "user",
+        "value" : "User(email=grazyna.reilly@yahoo.com, password=5kvk995z3, name=Forest)"
+      } ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true,
+      "stepsCount" : 0
+    }, {
+      "name" : "Нажатие на кнопку Войти в аккаунт",
+      "time" : {
+        "start" : 1751536431283,
+        "stop" : 1751536432050,
+        "duration" : 767
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false,
+      "stepsCount" : 0
+    }, {
+      "name" : "Заполнение формы Вход",
+      "time" : {
+        "start" : 1751536432050,
+        "stop" : 1751536432742,
+        "duration" : 692
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Заполнение поля Email",
+        "time" : {
+          "start" : 1751536432051,
+          "stop" : 1751536432347,
+          "duration" : 296
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "email",
+          "value" : "grazyna.reilly@yahoo.com"
+        } ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true,
+        "stepsCount" : 0
+      }, {
+        "name" : "Заполнение поля Пароль",
+        "time" : {
+          "start" : 1751536432348,
+          "stop" : 1751536432529,
+          "duration" : 181
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "password",
+          "value" : "5kvk995z3"
+        } ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true,
+        "stepsCount" : 0
+      }, {
+        "name" : "Нажатие на кнопку Войти",
+        "time" : {
+          "start" : 1751536432530,
+          "stop" : 1751536432742,
+          "duration" : 212
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false,
+        "stepsCount" : 0
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "email",
+        "value" : "grazyna.reilly@yahoo.com"
+      }, {
+        "name" : "password",
+        "value" : "5kvk995z3"
+      } ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true,
+      "stepsCount" : 3
+    }, {
+      "name" : "Нажатие на кнопку Личный кабинет",
+      "time" : {
+        "start" : 1751536432742,
+        "stop" : 1751536433352,
+        "duration" : 610
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false,
+      "stepsCount" : 0
+    }, {
+      "name" : "Нажатие на логотип бургерной",
+      "time" : {
+        "start" : 1751536433352,
+        "stop" : 1751536433976,
+        "duration" : 624
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false,
+      "stepsCount" : 0
+    }, {
+      "name" : "Удаление пользователя",
+      "time" : {
+        "start" : 1751536433999,
+        "stop" : 1751536434806,
+        "duration" : 807
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "token",
+        "value" : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NjY0NDUxOWVkMjgwMDAxYjY0M2YyOCIsImlhdCI6MTc1MTUzMjYyNSwiZXhwIjoxNzUxNTMzODI1fQ.QFBew_j0wC2FYw1Byy8IR5vyWxH0FMOJzQcVI1my3sc"
+      } ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true,
+      "stepsCount" : 0
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true,
+    "stepsCount" : 9
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "tests"
+  }, {
+    "name" : "testClass",
+    "value" : "tests.ConstructorTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "clickLogoBurgerTest"
+  }, {
+    "name" : "suite",
+    "value" : "tests.ConstructorTest"
+  }, {
+    "name" : "host",
+    "value" : "Saint-V"
+  }, {
+    "name" : "thread",
+    "value" : "23880@Saint-V.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit4"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "e06557bd936b15fe.json",
+  "parameterValues" : [ ]
+}
