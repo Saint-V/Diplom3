@@ -1,71 +1,69 @@
 package tests;
+
+
+import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
-import io.restassured.RestAssured;
-import org.example.*;
+import io.restassured.response.Response;
+import org.example.User;
+import org.example.UserClient;
+import org.example.UserGenerator;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-import pageobject.HomePage;
-import pageobject.Login;
-import pageobject.PersonalAccount;
+import pageobject.LoginPage;
+import pageobject.MainPage;
+import pageobject.PersonalAccountPage;
+import pageobject.RegisterPage;
 
-import static org.example.Urls.STELLAR_BURGERS_HOME_PAGE_URL;
-import static org.example.UserApiGenerator.randomUser;
-import static org.openqa.selenium.devtools.v85.network.Network.clearBrowserCookies;
 
-@RunWith(Parameterized.class)
-public class GoToAccountTest {
+import static org.junit.Assert.assertTrue;
 
-    UserApi user = randomUser();
-    UserApiMethod userApiMethod = new UserApiMethod();
+public class GoToAccountTest extends BaseTest {
 
-    @Rule
-    public BrowserRule rule;
-
-    public GoToAccountTest(BrowserRule rule) {
-        this.rule = rule;
-    }
-
-    @Parameterized.Parameters
-    public static Object[][] getData() {
-        return new Object[][]{
-                { new YandexRule() },
-                { new ChromeRule() }
-        };
-    }
+    MainPage objMainPage;
+    LoginPage objLoginPage;
+    RegisterPage objRegisterPage;
+    PersonalAccountPage objPersonalAccountPage;
+    User user;
+    protected UserClient client;
+    protected String token;
 
     @Before
-    public void setUp(){
-        RestAssured.baseURI = STELLAR_BURGERS_HOME_PAGE_URL;
-        userApiMethod.create(user);
-
-        Login login = new Login(rule.getWebDriver());
-        login
-                .openLoginPage()
-                .enterEmail(user.getEmail())
-                .enterPassword(user.getPassword())
-                .clickOnButtonLoginInFormAuth()
-                .checkHomePageAfterAuth();
-    }
-
-    @Test
-    @DisplayName("Переход в личный кабинет по клику на «Личный кабинет»")
-    public void checkGoToAccountByPersonalAccountButton(){
-        PersonalAccount personalAccount = new PersonalAccount(rule.getWebDriver());
-        HomePage homePage = new HomePage(rule.getWebDriver());
-
-        homePage
-                .clickOnPersonalAccountButtonHp();
-        personalAccount
-                .isDisplayedProfileText();
+    public void setUp() {
+        objMainPage = new MainPage(driver);
+        objLoginPage = new LoginPage(driver);
+        objRegisterPage = new RegisterPage(driver);
+        objPersonalAccountPage = new PersonalAccountPage(driver);
+        client = new UserClient();
+        user = UserGenerator.getRandomUser();
+        Response response = client.createUser(user);
+        token = response.then().extract().path("accessToken");
     }
 
     @After
-    public void tearDown(){
-        userApiMethod.delete(user);
-        clearBrowserCookies();
+    public void cleanUp() {
+        if(token != null) {
+            client.deleteUser(token);
+        }
+    }
+
+    @Test
+    @DisplayName("Нажатие на кнопку Личный кабинет, если пользователь авторизован")
+    @Description("Проверка перехода в Личный кабинет")
+    public void GoToPersonalAccountWithAuthUserTest() {
+        objMainPage.clickLoginButton();
+        objLoginPage.loginUser(user.getEmail(), user.getPassword());
+        objMainPage.clickPersonalAccountButton();
+        objPersonalAccountPage.waitOfVisibilityExitButton();
+        assertTrue(objPersonalAccountPage.exitButtonIsDisplayed());
+    }
+
+    @Test
+    @DisplayName("Нажатие на кнопку Личный кабинет, если пользователь не авторизован")
+    @Description("Проверка перехода в Личный кабинет")
+    public void GoToPersonalAccountWithoutAuthUserTest() {
+        objMainPage.clickPersonalAccountButton();
+        objLoginPage.waitOfVisibilityEnterButton();
+        assertTrue(objLoginPage.enterButtonIsDisplayed());
     }
 }

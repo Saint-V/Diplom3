@@ -1,86 +1,68 @@
 package tests;
 
-import com.github.javafaker.Faker;
+
+import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
-import io.restassured.RestAssured;
 import io.restassured.response.Response;
-import org.example.*;
+import org.example.User;
+import org.example.UserClient;
+import org.example.UserGenerator;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-import pageobject.Registration;
+import pageobject.LoginPage;
+import pageobject.MainPage;
+import pageobject.RegisterPage;
 
-import static org.example.Urls.STELLAR_BURGERS_HOME_PAGE_URL;
-import static org.example.UserApiGenerator.randomUser;
-import static org.openqa.selenium.devtools.v85.network.Network.clearBrowserCookies;
 
-@RunWith(Parameterized.class)
-public class RegistrationTest {
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
-    Faker faker = new Faker();
-    UserApiMethod userApiMethod = new UserApiMethod();
-    UserApi user = randomUser();
+public class RegistrationTest extends BaseTest {
 
-    @Rule
-    public BrowserRule rule;
-
-    public RegistrationTest(BrowserRule rule) {
-        this.rule = rule;
-    }
-
-    @Parameterized.Parameters
-    public static Object[][] getData() {
-        return new Object[][]{
-                { new YandexRule() },
-                { new ChromeRule() }
-        };
-    }
+    MainPage objMainPage;
+    LoginPage objLoginPage;
+    RegisterPage objRegisterPage;
+    User user;
+    protected UserClient client;
+    protected String token;
 
     @Before
-    public void setUp(){
-        RestAssured.baseURI = STELLAR_BURGERS_HOME_PAGE_URL;
-        userApiMethod.create(user);
-    }
-
-    @Test
-    @DisplayName("Заполнение формы и регистрация с валидными данными")
-    public void fillingOutTheRegistrationForm(){
-        Registration registration = new Registration(rule.getWebDriver());
-
-        registration
-                .openRegistrationPage()
-                .enterName(user.getName())
-                .enterEmail(user.getEmail())
-                .enterPassword(user.getPassword())
-                .tapOnBattonRegistration()
-
-                .checkRegistrationSuccess();
-    }
-
-    @Test
-    @DisplayName("Заполнение формы регистрации с некорректным паролем: пароль 5 символов")
-    public void fillingRegistrationFormWithIncorrectPassword(){
-        Registration registration = new Registration(rule.getWebDriver());
-
-        registration
-                .openRegistrationPage()
-                .enterName(user.getName())
-                .enterEmail(user.getPassword())
-                .enterPassword(faker.bothify("29???"))
-                .tapOnBattonRegistration()
-
-                .checkIncorrectPassword();
+    public void setUp() {
+        objMainPage = new MainPage(driver);
+        objLoginPage = new LoginPage(driver);
+        objRegisterPage = new RegisterPage(driver);
+        client = new UserClient();
+        objMainPage.clickLoginButton();
+        objLoginPage.clickRegisterButton();
     }
 
     @After
-    public void tearDown(){
+    public void cleanUp() {
+        if(token != null) {
+            client.deleteUser(token);
+        }
+    }
 
-        Response response = userApiMethod.login(user);
-        if(response.statusCode() == 200) {userApiMethod.delete(user);}
+    @Test
+    @DisplayName("Успешная регистрация")
+    @Description("Проверка регистрации пользователя")
+    public void successRegisterTest() {
+        user = UserGenerator.getRandomUser();
+        objRegisterPage.registerUser(user.getName(), user.getEmail(), user.getPassword());
+        objLoginPage.waitOfVisibilityEnterButton();
+        Response response = client.loginUser(user);
+        token = response.then().extract().path("accessToken");
+        assertTrue(objLoginPage.enterButtonIsDisplayed());
+    }
 
-        clearBrowserCookies();
+    @Test
+    @DisplayName("Проверка ошибки для некорректного пароля")
+    @Description("Проверка регистрации пользователя")
+    public void registerWithIncorrectPasswordTest() {
+        user = new User("user-test@ya.ru", "pass", "Ivan");
+        objRegisterPage.registerUser(user.getName(), user.getEmail(), user.getPassword());
+        String actualErrorMessage = objRegisterPage.getErrorMessagePasswordField();
+        assertEquals("Неверное сообщение об ошибке", actualErrorMessage, "Некорректный пароль");
     }
 }

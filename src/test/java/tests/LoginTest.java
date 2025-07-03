@@ -1,114 +1,93 @@
 package tests;
 
+
+import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
-import io.restassured.RestAssured;
-import org.example.*;
+import io.restassured.response.Response;
+import org.example.User;
+import org.example.UserClient;
+import org.example.UserGenerator;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-import pageobject.HomePage;
-import pageobject.Login;
-import pageobject.Registration;
+import pageobject.LoginPage;
+import pageobject.MainPage;
+import pageobject.RecoverPasswordPage;
+import pageobject.RegisterPage;
 
-import static org.example.Urls.STELLAR_BURGERS_HOME_PAGE_URL;
-import static org.example.UserApiGenerator.randomUser;
-import static org.openqa.selenium.devtools.v85.network.Network.clearBrowserCookies;
 
-@RunWith(Parameterized.class)
-public class LoginTest {
+import static org.junit.Assert.assertEquals;
 
-    private UserApi user = randomUser();
-    UserApiMethod userApiMethod = new UserApiMethod();
+public class LoginTest extends BaseTest {
 
-    @Rule
-    public BrowserRule rule;
-
-    public LoginTest(BrowserRule rule) {
-        this.rule = rule;
-    }
-
-    @Parameterized.Parameters
-    public static Object[][] getData() {
-        return new Object[][]{
-                { new YandexRule() },
-                { new ChromeRule() }
-        };
-    }
+    MainPage objMainPage;
+    LoginPage objLoginPage;
+    RegisterPage objRegisterPage;
+    RecoverPasswordPage objRecoverPasswordPage;
+    User user;
+    protected UserClient client;
+    protected String token;
 
     @Before
-    public void setUp(){
-        RestAssured.baseURI = STELLAR_BURGERS_HOME_PAGE_URL;
-        userApiMethod.create(user);
-    }
-
-    @Test
-    @DisplayName("Вход в аккаунт по кнопке «Войти в аккаунт» на главной")
-    public void inputByButtonToEnterAccountHp(){
-        Login login = new Login(rule.getWebDriver());
-        HomePage homePage = new HomePage(rule.getWebDriver());
-
-        homePage
-                .openHomePage()
-                .clickOnButtonToEnterAccountHp();
-        login
-                .waitingForLoading()
-                .enterEmail(user.getEmail())
-                .enterPassword(user.getPassword())
-                .clickOnButtonLoginInFormAuth()
-                .checkHomePageAfterAuth();
-    }
-
-    @Test
-    @DisplayName("Вход в аккаунт через кнопку «Личный кабинет» на главной")
-    public void inputByPersonalAccountButtonHp(){
-        Login login = new Login(rule.getWebDriver());
-        HomePage homePage = new HomePage(rule.getWebDriver());
-
-        homePage
-                .openHomePage()
-                .clickOnPersonalAccountButtonHp();
-        login
-                .enterEmail(user.getEmail())
-                .enterPassword(user.getPassword())
-                .clickOnButtonLoginInFormAuth()
-                .checkHomePageAfterAuth();
-    }
-
-    @Test
-    @DisplayName("Вход в аккаунт через кнопку в форме регистрации")
-    public void inputByLoginButtonInFormRegistration(){
-        Registration registration = new Registration(rule.getWebDriver());
-        Login login = new Login(rule.getWebDriver());
-
-        registration
-                .openRegistrationPage();
-        login
-                .clickOnLoginButtonInForms()
-                .enterEmail(user.getEmail())
-                .enterPassword(user.getPassword())
-                .checkHomePageAfterAuth();
-    }
-
-    @Test
-    @DisplayName("Вход в аккаунт через кнопку в форме восстановления пароля")
-    public void inputByLoginButtonInFormRestorePassword(){
-        Login login = new Login(rule.getWebDriver());
-
-        login
-                .openPasswordRestorePage()
-                .clickOnLoginButtonInForms()
-                .enterEmail(user.getEmail())
-                .enterPassword(user.getPassword())
-                .clickOnButtonLoginInFormAuth()
-                .checkHomePageAfterAuth();
+    public void setUp() {
+        objMainPage = new MainPage(driver);
+        objLoginPage = new LoginPage(driver);
+        objRegisterPage = new RegisterPage(driver);
+        objRecoverPasswordPage = new RecoverPasswordPage(driver);
+        client = new UserClient();
+        user = UserGenerator.getRandomUser();
+        Response response = client.createUser(user);
+        token = response.then().extract().path("accessToken");
     }
 
     @After
-    public void tearDown(){
-        userApiMethod.delete(user);
-        clearBrowserCookies();
+    public void cleanUp() {
+        if(token != null) {
+            client.deleteUser(token);
+        }
+    }
+
+    @Test
+    @DisplayName("Вход по кнопке \"Войти в аккаунт\" на главной странице")
+    @Description("Проверка авторизации пользователя")
+    public void loginToLoginButtonTest() {
+        objMainPage.clickLoginButton();
+        objLoginPage.loginUser(user.getEmail(), user.getPassword());
+        objMainPage.waitLoadMainPage();
+        assertEquals(URL,driver.getCurrentUrl());
+    }
+
+    @Test
+    @DisplayName("Вход через кнопку \"Личный кабинет\"")
+    @Description("Проверка авторизации пользователя")
+    public void loginToPersonalAccountButtonTest() {
+        objMainPage.clickPersonalAccountButton();
+        objLoginPage.loginUser(user.getEmail(), user.getPassword());
+        objMainPage.waitLoadMainPage();
+        assertEquals(URL,driver.getCurrentUrl());
+    }
+
+    @Test
+    @DisplayName("Вход через кнопку в форме регистрации")
+    @Description("Проверка авторизации пользователя")
+    public void loginEnterButtonOnRegisterPageTest() {
+        objMainPage.clickLoginButton();
+        objLoginPage.clickRegisterButton();
+        objRegisterPage.clickEnterButton();
+        objLoginPage.loginUser(user.getEmail(), user.getPassword());
+        objMainPage.waitLoadMainPage();
+        assertEquals(URL,driver.getCurrentUrl());
+    }
+
+    @Test
+    @DisplayName("Вход через кнопку в форме восстановления пароля")
+    @Description("Проверка авторизации пользователя")
+    public void loginButtonOnRecoveryPasswordPageTest() {
+        objMainPage.clickLoginButton();
+        objLoginPage.clickRecoverPasswordButton();
+        objRecoverPasswordPage.clickEnterButton();
+        objLoginPage.loginUser(user.getEmail(), user.getPassword());
+        objMainPage.waitLoadMainPage();
+        assertEquals(URL,driver.getCurrentUrl());
     }
 }

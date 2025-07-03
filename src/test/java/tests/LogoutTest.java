@@ -16,9 +16,9 @@ import pageobject.PersonalAccountPage;
 import pageobject.RegisterPage;
 
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
-public class ConstructorTest extends BaseTest {
+public class LogoutTest extends BaseTest {
 
     MainPage objMainPage;
     LoginPage objLoginPage;
@@ -51,18 +51,12 @@ public class ConstructorTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("Нажатие в личном кабинете на конструктор")
-    @Description("Проверка перехода в конструктор")
-    public void goPersonalAccountToConstructorTest() {
-        objPersonalAccountPage.clickConstructorButton();
-        assertEquals(URL,driver.getCurrentUrl());
-    }
-
-    @Test
-    @DisplayName("Нажатие в личном кабинете на логотип бургерной")
-    @Description("Проверка перехода на главную страницу")
-    public void clickLogoBurgerTest() {
-        objPersonalAccountPage.clickLogoBurger();
-        assertEquals(URL,driver.getCurrentUrl());
+    @DisplayName("LogOut нажатием кнопки Выход в Личном кабинете")
+    @Description("Проверка выхода пользователя")
+    public void logoutUserTest(){
+        objPersonalAccountPage.waitOfVisibilityExitButton();
+        objPersonalAccountPage.clickExitButton();
+        objLoginPage.waitOfVisibilityEnterButton();
+        assertTrue(objLoginPage.enterButtonIsDisplayed());
     }
 }
